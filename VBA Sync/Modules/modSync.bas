@@ -687,6 +687,8 @@ End Function
 Private Function IsDocModuleEmpty(vbComp As Object) As Boolean
     Dim cm As Object: Set cm = vbComp.CodeModule
     Dim txt As String
+    
+    If cm.CountOfLines = 0 Then IsDocModuleEmpty = True: Exit Function
     txt = cm.Lines(1, cm.CountOfLines)
     txt = CleanCode(txt)
 
