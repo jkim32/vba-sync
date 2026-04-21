@@ -720,11 +720,11 @@ Private Function CleanCode(src As String) As String
     For Each ln In Split(src, vbCrLf)
         t = Trim$(ln)
         Select Case True
-            Case t Like "VERSION *", t Like "Attribute VB_*":
+            Case t Like "VERSION *", t Like "Attribute VB_*",  t Like "Attribute *.VB_*":
             Case Left$(t, 5) = "BEGIN":                       inBegin = True
-            Case inBegin And t = "END":                        inBegin = False
+            Case inBegin And t = "END":                       inBegin = False
             Case inBegin:
-            Case Else:                                          out = out & ln & vbCrLf
+            Case Else:                                        out = out & ln & vbCrLf
         End Select
     Next
     CleanCode = RTrim$(out)
