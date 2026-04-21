@@ -83,6 +83,17 @@ Const GIT_IGNORE As String = ".gitignore"
 Const README_FILE As String = "README.md"
 Const WORKSHEET_LINE_LIMIT As Long = 200
 
+'==================== VBIDE constants ====================
+' VBIDE constants defined locally for late binding.
+' This allows compilation and execution without requiring
+' a reference to "Microsoft Visual Basic for Applications Extensibility 5.3".
+' Values are fixed per Microsoft VBIDE enum (vbext_ComponentType).
+Private Const vbext_ct_StdModule       As Long = 1
+Private Const vbext_ct_ClassModule     As Long = 2
+Private Const vbext_ct_MSForm          As Long = 3
+Private Const vbext_ct_ActiveXDesigner As Long = 11
+Private Const vbext_ct_Document        As Long = 100
+
 '====================  Ribbon wrappers  ====================
 Public Sub ExportProject(control As Object)
     DoExportProject
